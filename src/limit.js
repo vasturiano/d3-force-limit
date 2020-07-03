@@ -31,7 +31,7 @@ export default function() {
           if (isBefore === node[vAttr] < 0) {
             node[vAttr] = 0; // moving outwards, stop its motion
           }
-          node[coord] = range[isBefore ? 0 : 1]; // move it to the closest edge
+          node[coord] = isBefore ? range[0] + r : range[1] - r; // move it to the closest edge
         }
       });
     });
