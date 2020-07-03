@@ -9,6 +9,8 @@ A force type for the d3-force simulation engine to hard limit nodes positions to
 
 It can be used, for example to [keep nodes within boundaries](https://vasturiano.github.io/d3-force-pod/example/basic/).
 
+This force works best if it is used as the last force in the simulation engine chain.
+
 See also [d3.forceSurface](https://github.com/vasturiano/d3-force-surface).
 
 ## Quick start
