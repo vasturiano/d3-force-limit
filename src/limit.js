@@ -22,21 +22,29 @@ export default function() {
           .map(accessFn => accessFn(node))
           .sort((a,b) => a - b);
 
-        const center = node[coord];
+        // take node radius into account
+        range[0] += r;
+        range[1] -= r;
 
-        if (center-r < range[0] || center+r > range[1]) {
-          // coordinate out of bounds
-          const isBefore = center-r < range[0];
-          const vAttr = `v${coord}`;
-          if (isBefore === node[vAttr] < 0) {
-            node[vAttr] = 0; // moving outwards, stop its motion
+        const vAttr = `v${coord}`;
+        const v = node[vAttr];
+        const pos = node[coord];
+        const futurePos = pos + v;
+
+        if (futurePos < range[0] || futurePos > range[1]) { // future position out of bounds
+          const isBefore = futurePos < range[0];
+
+          if (pos < range[0] || pos > range[1]) { // already out of bounds
+            if (isBefore === v < 0) {
+              node[vAttr] = 0; // moving outwards, stop its motion
+            }
+            node[coord] = range[isBefore ? 0 : 1]; // move it to the closest edge
+          } else {
+            node[vAttr] = range[isBefore ? 0 : 1] - pos; // will cross the limit, slow it down
           }
-          node[coord] = isBefore ? range[0] + r : range[1] - r; // move it to the closest edge
         }
       });
     });
-
-    //
   }
 
   function initialize() {}
