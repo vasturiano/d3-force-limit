@@ -6,10 +6,11 @@ d3.forceLimit
 [![Dependencies][dependencies-img]][dependencies-url]
 
 A force type for the d3-force simulation engine to hard limit nodes positions to a specified range.
+See [demo](https://observablehq.com/@vasturiano/d3-force-limit).
 
 It can be used, for example to [keep nodes within boundaries](https://vasturiano.github.io/d3-force-pod/example/basic/).
 
-It also features a cushioning force that repels nodes away from the boundaries. This can be useful to prevent nodes from accumulating at the edge of the canvas. See [this example](https://observablehq.com/@vasturiano/d3-force-limit).
+It also features a cushioning force that repels nodes away from the boundaries. This can be useful to prevent nodes from accumulating at the edge of the canvas.
 
 This force works best if it is used as the last force in the simulation engine chain.
 
