@@ -9,9 +9,11 @@ export default function() {
     y0 = (node => -Infinity), // accessor: min Y
     y1 = (node => Infinity),  // accessor: max Y
     z0 = (node => -Infinity), // accessor: min z
-    z1 = (node => Infinity);  // accessor: max z
+    z1 = (node => Infinity),  // accessor: max z
+    cushionWidth = 0,         // width of the cushion layer that pushes nodes away from boundaries
+    cushionStrength = 0.01;   // intensity of the cushion layer that pushes nodes away from boundaries, in terms of px/tick^2
 
-  function force() {
+  function force(alpha) {
     nodes.forEach(node => {
       const r = radius(node);
 
@@ -42,6 +44,12 @@ export default function() {
           } else {
             node[vAttr] = range[isBefore ? 0 : 1] - pos; // will cross the limit, slow it down
           }
+        } else if (cushionWidth > 0 && cushionStrength > 0) {
+          // repel from boundaries
+          node[vAttr] += (
+            Math.max(0, 1 - Math.max(0, pos - range[0]) / cushionWidth)
+            - Math.max(0, 1 - Math.max(0, range[1] - pos) / cushionWidth)
+          ) * cushionStrength * alpha;
         }
       });
     });
@@ -81,6 +89,14 @@ export default function() {
 
   force.z1 = function(_) {
     return arguments.length ? (z1 = typeof _ === "function" ? _ : constant(+_), force) : z1;
+  };
+
+  force.cushionWidth = function(_) {
+    return arguments.length ? (cushionWidth = _, force) : cushionWidth;
+  };
+
+  force.cushionStrength = function(_) {
+    return arguments.length ? (cushionStrength = _, force) : cushionStrength;
   };
 
   return force;
