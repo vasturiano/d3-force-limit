@@ -44,7 +44,9 @@ export default function() {
           } else {
             node[vAttr] = range[isBefore ? 0 : 1] - pos; // will cross the limit, slow it down
           }
-        } else if (cushionWidth > 0 && cushionStrength > 0) {
+        }
+
+        if (cushionWidth > 0 && cushionStrength > 0) {
           // repel from boundaries
           node[vAttr] += (
             Math.max(0, 1 - Math.max(0, pos - range[0]) / cushionWidth)
