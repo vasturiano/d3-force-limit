@@ -18,7 +18,7 @@ export default function() {
       const r = radius(node);
 
       ['x', 'y', 'z'].slice(0, nDim).forEach(coord => {
-        if (!node.hasOwnProperty(coord)) { return; }
+        if (!(coord in node)) { return; }
 
         const range = { x: [x0, x1], y: [y0, y1], z: [z0, z1] }[coord]
           .map(accessFn => accessFn(node))
