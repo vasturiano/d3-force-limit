@@ -60,7 +60,7 @@ export default function() {
   function initialize() {}
 
   force.initialize = function(initNodes, nDims) {
-    let numDimensions = [1,2,3].includes(nDims) ? nDims : 2;
+    const numDimensions = [1,2,3].includes(nDims) ? nDims : 2;
 
     nodes = initNodes;
     nDim = numDimensions;
