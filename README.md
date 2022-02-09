@@ -3,7 +3,7 @@ d3.forceLimit
 
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
-[![Dependencies][dependencies-img]][dependencies-url]
+[![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 
 A force type for the d3-force simulation engine to hard limit nodes positions to a specified range.
 See [demo](https://observablehq.com/@vasturiano/d3-force-limit).
@@ -18,19 +18,19 @@ See also [d3.forceSurface](https://github.com/vasturiano/d3-force-surface).
 
 ## Quick start
 
-```
+```js
 import d3ForceLimit from 'd3-force-limit';
 ```
 or
-```
+```js
 d3.forceLimit = require('d3-force-limit');
 ```
 or even
-```
+```html
 <script src="//unpkg.com/d3-force-limit"></script>
 ```
 then
-```
+```js
 d3.forceSimulation()
     .nodes(<myNodes>)
     .force('limit', d3.forceLimit()
@@ -55,9 +55,9 @@ d3.forceSimulation()
 
 
 
-[npm-img]: https://img.shields.io/npm/v/d3-force-limit.svg
+[npm-img]: https://img.shields.io/npm/v/d3-force-limit
 [npm-url]: https://npmjs.org/package/d3-force-limit
-[build-size-img]: https://img.shields.io/bundlephobia/minzip/d3-force-limit.svg
+[build-size-img]: https://img.shields.io/bundlephobia/minzip/d3-force-limit
 [build-size-url]: https://bundlephobia.com/result?p=d3-force-limit
-[dependencies-img]: https://img.shields.io/david/vasturiano/d3-force-limit.svg
-[dependencies-url]: https://david-dm.org/vasturiano/d3-force-limit
+[npm-downloads-img]: https://img.shields.io/npm/dt/d3-force-limit
+[npm-downloads-url]: https://www.npmtrends.com/d3-force-limit
