@@ -21,11 +21,7 @@ See also [d3.forceSurface](https://github.com/vasturiano/d3-force-surface).
 ```js
 import d3ForceLimit from 'd3-force-limit';
 ```
-or
-```js
-d3.forceLimit = require('d3-force-limit');
-```
-or even
+or using a *script* tag
 ```html
 <script src="//unpkg.com/d3-force-limit"></script>
 ```
