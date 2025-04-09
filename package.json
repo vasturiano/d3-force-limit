@@ -3,6 +3,7 @@
   "version": "1.2.1",
   "description": "A positioning hard limit force type for the d3-force simulation engine.",
   "type": "module",
+  "jsdelivr": "dist/d3-force-limit.min.js",
   "unpkg": "dist/d3-force-limit.min.js",
   "main": "dist/d3-force-limit.mjs",
   "module": "dist/d3-force-limit.mjs",

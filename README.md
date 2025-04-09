@@ -23,7 +23,7 @@ import d3ForceLimit from 'd3-force-limit';
 ```
 or using a *script* tag
 ```html
-<script src="//unpkg.com/d3-force-limit"></script>
+<script src="//cdn.jsdelivr.net/npm/d3-force-limit"></script>
 ```
 then
 ```js
