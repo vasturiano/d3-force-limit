@@ -49,6 +49,10 @@ d3.forceSimulation()
 | <b>cushionWidth</b>([<i>num</i>]) | Getter/setter for the thickness (in `px`) of the cushioning force that repels nodes away from the specified boundaries. Nodes outside this cushion margin will not be affected. | `0` |
 | <b>cushionStrength</b>([<i>num</i>]) | Getter/setter for the intensity or elasticity (measured in `px/tick²`) of the boundary cushion. The higher this value the stronger nodes within the cushion margin will be pushed back. The intensity of this force increases linearly with the portion of cushion that has been crossed, being at full intensity when the node is touching the boundary. | `0.01` |
 
+## ❤️ Support This Project
+
+If you find this module useful and would like to support its development, you can [buy me a ☕](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url). Your contributions help keep open-source sustainable!
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url)
 
 
 [npm-img]: https://img.shields.io/npm/v/d3-force-limit
